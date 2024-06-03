@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-const url = "https://automationexercise.com/api/";
+const url = "/" + "api/";
 const tempEmail = "tempEmail@getMaxListeners.com";
 const tempPassword = "tempPassword";
 

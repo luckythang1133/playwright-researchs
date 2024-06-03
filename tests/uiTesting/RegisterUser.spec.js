@@ -17,7 +17,7 @@ test.describe("two tests", () => {
   test("Test Case 1: Register User", { tag: ["@smoke", "@regression"] }, async () => {
     // 1. Launch browser
     // 2. Navigate to url 'http://automationexercise.com'
-    await page.goto("https://automationexercise.com/");
+    await page.goto("/");
     // 4. Click on 'Signup / Login' button
     await signupLoginPage.navigateToPageOnHeader("Signup / Login");
     // 5. Verify 'New User Signup!' is visible
