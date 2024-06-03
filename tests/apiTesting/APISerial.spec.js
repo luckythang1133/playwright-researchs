@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
-const url = "/" + "api/";
+const { Env } = require("../../env/env");
+
+const url = Env.URL + "api/";
 const tempEmail = "tempEmail@getMaxListeners.com";
 const tempPassword = "tempPassword";
 

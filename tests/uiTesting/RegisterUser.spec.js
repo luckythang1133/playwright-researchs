@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 const { POManager } = require("../../pages/POManager");
+const { Env } = require("../../env/env");
 
 let poManager, signupLoginPage, homePage, productsPage;
 let context, page;
@@ -17,7 +18,7 @@ test.describe("two tests", () => {
   test("Test Case 1: Register User", { tag: ["@smoke", "@regression"] }, async () => {
     // 1. Launch browser
     // 2. Navigate to url 'http://automationexercise.com'
-    await page.goto("/");
+    await page.goto(Env.URL);
     // 4. Click on 'Signup / Login' button
     await signupLoginPage.navigateToPageOnHeader("Signup / Login");
     // 5. Verify 'New User Signup!' is visible

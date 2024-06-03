@@ -1,7 +1,9 @@
 import { expect, test } from "@playwright/test";
-const url = "https://automationexercise.com/api/";
-const email = "autoTestDemo@gmail.com";
-const password = "autoTestDemo";
+const { Env } = require("../../env/env");
+
+const url = Env.URL + "api/";
+const email = Env.USERNAME;
+const password = Env.PASSWORD;
 
 test.describe("API testing with parallel", () => {
   test("API 1: Get All Products List", { tag: ["@api01", "@smoke"] }, async ({ request }) => {
