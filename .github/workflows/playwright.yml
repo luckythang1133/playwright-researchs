@@ -21,9 +21,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        environment: [${{ github.event.inputs.environment }}]
 
     steps:
       - name: Checkout repository
@@ -45,8 +42,8 @@ jobs:
 
       - name: Run Playwright tests in Docker container
         env:
-          ENVIRONMENT: ${{ matrix.environment }}
-        run: docker run --env ENVIRONMENT=${{ matrix.environment }} playwright-tests:latest
+          ENVIRONMENT: ${{ github.event.inputs.environment }}
+        run: docker run --env ENVIRONMENT=$${{ github.event.inputs.environment }} playwright-tests:latest
 
       - name: Upload Playwright report
         if: always()
