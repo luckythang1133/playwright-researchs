@@ -45,6 +45,9 @@ jobs:
           ENVIRONMENT: ${{ github.event.inputs.environment }}
         run: docker run --env ENVIRONMENT=${{ github.event.inputs.environment }} playwright-tests:latest
 
+      - name: List all files
+        run: ls
+
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v4
