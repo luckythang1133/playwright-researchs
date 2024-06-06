@@ -1,10 +1,10 @@
 name: Playwright Tests
 
 on:
-  # push:
-  #   branches: [main, master]
-  # pull_request:
-  #   branches: [main, master]
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
   workflow_dispatch:
     inputs:
       environment:
@@ -44,9 +44,7 @@ jobs:
         env:
           ENVIRONMENT: ${{ github.event.inputs.environment }}
         run: docker run --env ENVIRONMENT=${{ github.event.inputs.environment }} playwright-tests:latest
-
-      - name: List all files
-        run: ls
+        continue-on-error: true # Continue even if there are test failures
 
       - name: Upload Playwright report
         if: always()
