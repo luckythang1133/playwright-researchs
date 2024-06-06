@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        environment: [dev, qa, staging, product]
+        environment: ${{ github.event.inputs.environment }}
 
     steps:
       - name: Checkout repository

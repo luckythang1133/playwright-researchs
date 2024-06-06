@@ -11,4 +11,4 @@ COPY . .
 # set default env variable, can be override in GitHub Actions
 ENV ENVIRONMENT=qa
 
-CMD ["npx", "cross-env", "ENVIRONMENT=$ENVIRONMENT", "npx", "playwright", "test", "--reporter=list"]
+CMD ["npx", "cross-env", "ENVIRONMENT=$ENVIRONMENT", "npx", "playwright", "test"]
