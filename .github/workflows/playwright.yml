@@ -43,7 +43,7 @@ jobs:
       - name: Run Playwright tests in Docker container
         env:
           ENVIRONMENT: ${{ github.event.inputs.environment }}
-        run: docker run --env ENVIRONMENT=$${{ github.event.inputs.environment }} playwright-tests:latest
+        run: docker run --env ENVIRONMENT=${{ github.event.inputs.environment }} playwright-tests:latest
 
       - name: Upload Playwright report
         if: always()
