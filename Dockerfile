@@ -1,6 +1,10 @@
 # Dockerfile
 FROM mcr.microsoft.com/playwright:v1.44.0-focal
 
+# Install Node.js 20
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs
+
 WORKDIR /usr/src/app
 
 COPY package*.json ./
