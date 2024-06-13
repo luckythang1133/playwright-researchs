@@ -30,11 +30,11 @@ module.exports = defineConfig({
     // baseURL: process.env.BASE_URL || "https://automationexercise.com/",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    trace: "retain-on-failure",
     actionTimeout: 0,
     headless: true,
     screenshot: "on",
-    video: "on",
+    video: "retain-on-failure",
   },
 
   /* Configure projects for major browsers */

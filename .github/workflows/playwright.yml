@@ -43,7 +43,7 @@ jobs:
       - name: Run Playwright tests in Docker container
         env:
           ENVIRONMENT: ${{ github.event.inputs.environment || 'qa' }}
-        run: docker run --env ENVIRONMENT=${{ github.event.inputs.environment || 'qa' }} playwright-tests:latest
+        run: docker run --rm -v ${{ github.workspace }}/playwright-report:/usr/src/app/playwright-report --env ENVIRONMENT=${{ github.event.inputs.environment || 'qa' }} playwright-tests:latest
         continue-on-error: true # Continue even if there are test failures
 
       - name: Upload Playwright report
