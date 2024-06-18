@@ -1,4 +1,4 @@
-class Env {
+export class Env {
   static get URL() {
     return process.env.BASE_URL || "https://automationexercise.com";
   }
@@ -11,5 +11,3 @@ class Env {
     return process.env.PASSWORD;
   }
 }
-
-module.exports = { Env };

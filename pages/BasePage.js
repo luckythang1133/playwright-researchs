@@ -1,8 +1,7 @@
-class BasePage {
+export class BasePage {
   // Init selectors using constructor
   constructor(page) {
     this.page = page;
-    this.signUpButton = page.locator("xpath");
   }
   // Define dynamic Xpath
   getMenuItemXpath(menuItem) {
@@ -15,4 +14,4 @@ class BasePage {
 
   // Define page method
 }
-module.exports = { BasePage };
+// export default { BasePage };

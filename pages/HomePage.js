@@ -1,6 +1,6 @@
-const { BasePage } = require("./BasePage");
+import { BasePage } from "./BasePage";
 
-class HomePage extends BasePage {
+export class HomePage extends BasePage {
   // Init selectors using constructor
   constructor(page) {
     super(page);
@@ -11,4 +11,4 @@ class HomePage extends BasePage {
     await this.clickMenuItem("Home");
   }
 }
-module.exports = { HomePage };
+// export default { HomePage };

@@ -1,6 +1,6 @@
-const { BasePage } = require("./BasePage");
+import { BasePage } from "./BasePage";
 
-class SignupLoginPage extends BasePage {
+export class SignupLoginPage extends BasePage {
   // Init selectors using constructor
   constructor(page) {
     super(page);
@@ -26,4 +26,4 @@ class SignupLoginPage extends BasePage {
   async fillAccountInformation(title, name, email, password, dateOfBirth, signUpForOurNewsletter, receiveSpecialOffersFromOurPartners) {}
   async fillAddressInformation(firstName, lastName, company, address, address2, country, state, city, zipCode, mobileNumber) {}
 }
-module.exports = { SignupLoginPage };
+export default { SignupLoginPage };

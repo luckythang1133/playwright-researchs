@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-const { POManager } = require("../../pages/POManager");
-const { Env } = require("../../env/env");
+import { POManager } from "../../pages/POManager";
+import { Env } from "../../env/env";
 
 let poManager, signupLoginPage, homePage, productsPage;
 let context, page;
